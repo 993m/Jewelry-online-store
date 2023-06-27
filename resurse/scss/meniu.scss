@@ -1,0 +1,108 @@
+ul.submeniu{
+    display: none;
+    padding:0;
+}
+
+nav{
+    height: var(--inaltime-buton)+5px;
+    margin:0px;
+    margin-top:30px;
+    margin-bottom:10px;
+    padding:5px;
+    border:1px solid var(--main-color);
+    background-color: var(--main-color);
+    background-clip: content-box;
+}
+
+ul.meniu{
+    display: flex;
+    padding:0px;
+    margin:0;
+    width:80%;
+    margin:auto;
+    
+    li{
+        width: 286px;
+        list-style-type: none;
+        height: var(--inaltime-buton);
+        background-color: var(--main-color);
+
+        li{
+            overflow: hidden;
+        }
+
+        a{
+            display: block;
+            height: var(--inaltime-buton);
+            text-decoration: none;
+            text-align: center;
+            line-height: var(--inaltime-buton);
+            color: var(--roz-deschis);
+            padding:0;
+            margin:0;
+        }
+    }
+
+    >li{
+        &:hover{
+            ul.submeniu{
+                display:block;
+                animation: aparitie_submeniu;
+                animation-duration:0.5s;
+                transform-origin: top;
+                position:relative;
+            }
+            transition-duration: 0.2s;
+        }
+
+        >a{
+            &:hover{
+                background-color: var(--buton-hover);
+                box-shadow: 0px 0px 10px var(--roz-deschis) inset;
+                transition: box-shadow 1.2s;
+            }
+        }
+
+        li{
+            a{
+                font-size: 90%;
+                &:before{
+                    display:inline-block;
+                    content: "\2192";
+                    height:var(--inaltime-buton);
+                    color: var(--roz-deschis);
+                    transform: translateX(-150px);
+                    transition: transform 0.3s linear;
+                }
+                &:hover{
+                    &::before{
+                        transform: translateX(0px);
+                    }
+                }
+            }
+        }
+    }  
+}
+
+#hamburger-menu{
+    display:none;
+    height:var(--inaltime-buton);
+    padding:0;
+    margin:0;
+    margin-bottom:10px;
+    margin-top: 30px;
+    background-color: var(--main-color);
+
+    img{
+        height:100%;
+    }
+}
+
+#ch-menu{
+    display:none;
+}
+
+@keyframes aparitie_submeniu{
+    0%{transform:scaleY(0);}
+    100%{transform:scaleY(1);}
+}

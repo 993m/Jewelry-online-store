@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <meta name="keywords" content="bijuterii, diamante, inele, cercei, bratari, coliere, seturi de bijuterii, inel de logodna">
+		<meta name="description" content="Bijuterii încrustate cu diamante frumoase, unice, veritabile! Inele | Brățări | Cercei | Coliere | Seturi de bijuterii">
+        <title>Bijuterii Castanilor - produse</title>
+        <%- include("../fragmente/head") %>
+        <link href="/resurse/css/jucarii.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src=/resurse/js/produse.js></script>
+    </head>
+    <body>
+    <%- include("../fragmente/header") %>
+
+    <main>
+        <label>
+            <p>Sortare crescatoare <input id="buton_cresc"  name="rad" value="cresc"  type="radio"/></p>
+            <p>Sortare descrescatoare <input id="buton_descresc"  name="rad"  value="desc" type="radio"/></p>
+        </label>
+
+        <label>Culoarea:
+            <select id="select">
+                <option selected value="toate">toate</option>
+                <option value="rosu">rosu</option>
+                <option value="alb">alb</option>
+                <option value="verde">verde</option>
+                <option value="galben">galben</option>
+                <option value="roz">roz</option>
+                <option value="albastru">albastru</option>
+                <option value="negru">negru</option>
+            </select>
+        </label>
+
+        <button id="filtrare">Filtreaza</button>
+
+
+
+            <h1>Jucarii</h1>
+            <div class="grid-produse">
+                <% let i=0; for( let prod of locals.produse) { i++; %>
+                    <article class="produs" >
+                        <h2 class="jucarie"> <%- i %>. <%- prod.nume %></h3>
+                        <p class="pret"> Pret: <span class="val-pret"> <%- prod.pret %></span></p>
+                        <p class="varsta_min">Varsta minima:  <span class="val-varsta"> <%- prod.varsta_minima %></span></p>
+
+                        <ol class="lista-culori" style="list-style-type: none;"> 
+                        <% let a=97, k=0;  for(let culoare of prod.culori) { %>
+                            <li class="culoare"> <%- String.fromCharCode(a) %>. <%- culoare  %> </li>
+                        <% a++; k++; }%>
+                        </ol>
+ 
+                        <p><%- k %> culori <% if(prod.varsta_minima < 2) %>, potrivit pt un bebelus. </p>
+                    
+                        
+                    </article>
+                <% }%>
+            </div>
+    </main>
+
+    <%- include("../fragmente/footer") %>
+    </body>
+</html>

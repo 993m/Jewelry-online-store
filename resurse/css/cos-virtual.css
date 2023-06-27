@@ -1,0 +1,30 @@
+.cos-virtual{
+    padding:2%;
+    display: flex;
+    width: 100%;
+}
+.cos-virtual>:nth-child(1){
+    width:20%;
+}
+.cos-virtual>:nth-child(1) img{
+    width:60%;
+}
+
+.cos-virtual>:nth-child(2){
+    width:25%;
+}
+
+.cos-virtual>:nth-child(3){
+    padding: 5%;
+}
+
+.cos-virtual>:nth-child(4), :nth-child(5), :nth-child(6){
+    text-align: center;
+    height:30px;
+    width:20px;
+    margin-top:auto;
+    margin-right:5px;
+    margin-bottom: auto;
+    
+
+}

@@ -1,0 +1,57 @@
+/*facem vizibil iconul de hamburger meniu*/
+#hamburger-menu{
+    display:block;
+    margin-bottom: 0;
+}
+
+main{
+    margin-top: 10px;;
+}
+
+/* implicit meniul e ascuns*/
+ul.meniu{
+    display:none;
+}
+
+/*optiunile se intind pe toata latimea containerului*/
+ul.meniu li{
+    width:100%;
+}
+
+/*aici facem vizibil meniul cand facem click pe hamburger meniu*/
+#ch-menu:checked + ul.meniu{
+    padding:0;
+    display: block;
+    transform-origin: top left;
+    animation-name: aparitie_meniu;
+    animation-duration:0.5s;
+    animation-timing-function:linear;
+}
+
+#ch-menu:checked + ul.meniu > li:hover > li{
+    display:block;
+    animation-duration:0.5s;
+    animation-name: aparitie_submeniu;
+    animation-timing-function:linear;
+    transform-origin: top;
+    
+}
+
+ul.meniu>li li:hover{
+    background-color: #5E6B7B;
+    box-shadow: 0px 0px 10px var(--roz-deschis) inset;
+    transition: box-shadow 1.2s;
+}
+
+ul.meniu>li li a:before{
+    display:none;
+}
+
+@keyframes aparitie_meniu{
+    0%{
+        transform:scale(0);
+    } 
+	100%{
+    	transform:scale(1);
+    }
+}

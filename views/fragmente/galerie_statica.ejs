@@ -1,0 +1,25 @@
+<div id="galerie_statica">
+    <%
+        d = new Date();
+        let k=0, timp_curent = d.getHours() * 60 + d.getMinutes();
+        
+        for(let imag of locals.imagini){
+            let st, dr, o1, m1, o2, m2; 
+            if(imag.timp) [st, dr] = imag.timp.split("-");
+            [o1, m1] = st.split(":");
+            [o2, m2] = dr.split(":");
+            st = parseInt(o1) * 60 + parseInt(m1);
+            dr = parseInt(o2) * 60 + parseInt(m2);
+
+            if(st <= timp_curent && timp_curent <= dr && k < 10){ k++; 
+        %> 
+        <figure>
+            <picture>
+                <source srcset="<%- imag.mic %>" media="(max-width:800px)"/>
+                <source srcset="<%- imag.mediu %>" media="(min-width:800px)"/>
+                <img src="<%- imag.mare  %>" alt="<%- imag.titlu %>"/>
+            </picture>
+            <figcaption> <%- imag.descriere  %></figcaption>
+        </figure>
+    <% } } %>
+</div>

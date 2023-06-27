@@ -1,0 +1,210 @@
+html{
+    --inaltime-buton: 2.5em;
+}
+
+body {
+    --backgr-pagina: #6583A0;
+    --main-color: #435366;
+    --roz-deschis: #FFEAEC;
+    --roz-inchis: #dbcaba;
+    --gri: #8c96a2;
+    --buton-hover: #5E6B7B;
+
+    background-color: var(--backgr-pagina);
+    padding: 20px;
+    padding-top: 0;
+    color: var(--roz-deschis);
+}
+
+div{
+    border: 1px solid var(--gri);
+    margin: 5px;
+    padding: 10px;
+}
+
+main{
+    color: var(--main-color);
+    background-color: whitesmoke;
+    display:grid;
+    grid-template-areas:"z-prezentare z-prezentare z-prezentare"
+                        "z-calendar z-tabel z-anunturi"
+                        "z-utilizatori z-tabel z-anunturi"
+                        "z-utilizatori z-dateus z-datess"
+                        "z-creativa z-creativa z-creativa";
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 0.1fr 0.25fr 0.25fr 0.25fr 0.25fr;
+}
+
+.center{
+    display: block;
+    width:80%;
+    margin:auto;
+}
+
+#prezentare{
+    grid-area: z-prezentare;
+    background-color: var(--roz-inchis);
+    height:min-content;
+    padding:0;
+}
+
+#calendar{
+    grid-area: z-calendar;
+}
+
+#tabel{
+    grid-area: z-tabel;
+}
+
+#anunturi{
+    grid-area: z-anunturi;
+}
+
+#utilizatori{
+    grid-area: z-utilizatori;
+}
+
+#dateus{
+    grid-area: z-dateus;
+}
+
+#datess{
+    grid-area: z-datess;
+}
+
+#creativa{
+    grid-area: z-creativa;
+}
+
+@media screen  and (max-width:800px){
+    body{
+        font-size: small;
+    }
+    #acasa{
+        color:transparent;
+    }
+    .fas{
+        color:var(--roz-deschis);
+        width:94%;
+    }
+    .poza{
+        display:block;
+        width:250px;
+    }
+}
+
+@media screen  and (min-width:800px) and (max-width:1000px){
+    body{
+        font-size: medium;
+    }
+    #acasa{
+        color:transparent;
+    }
+    .fas{
+        color:var(--roz-deschis);
+        width:94%;
+    }  
+    .poza{
+        display:block;
+        width:350px;
+    }
+
+}
+
+@media screen  and (min-width:1000px){
+    body{
+        font-size: large;
+    } 
+}
+
+
+/* iframe */
+#cont_linkuri a{
+    display:block;
+    border: 4px double var(--main-color);
+    background-color: var(--backgr-pagina);
+    width: 50%;
+    height: 3em;
+    line-height: 3em;
+    color: var(--roz-deschis);
+    text-decoration: none;
+    text-align: center;
+    font-size: smaller;
+    transition: all 0.5s;
+    border-left:none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-radius: 8px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#cont_ifr iframe{
+    width: 45%;
+    height:22vw;
+}
+
+#cont_linkuri a:hover{
+    background-color: var(--roz-inchis);
+    width:65%;
+    color:var(--main-color);
+    overflow-wrap: break-word;
+    white-space:normal;
+    line-height: 1.5em;
+}
+
+#cont_linkuri{
+    border:none;
+    margin:0;
+    padding:0
+}
+
+#cont_ifr{
+    padding:0;
+    margin:0;
+    display:flex;
+    border:none;
+}
+
+
+/* link top */
+
+#link_top{
+    position:fixed;
+    bottom:0.7em;
+    right:0.3em;
+    width:3rem;
+    height:3rem;
+    text-align: center;
+    border-radius: 50%;
+    border: 3px solid var(--main-color);
+    line-height: 3rem;
+    background-color: var(--roz-deschis);
+    text-decoration: none;
+    font-size:40px;
+    font-weight: bold;
+    transition: all 0.3s linear;
+    color:var(--main-color);
+    opacity:0.7;
+}
+
+#link_top:hover{
+    box-shadow: 0px 0px 15px var(--main-color);
+    background-color: var(--roz-deschis);
+    opacity:1;
+    
+}
+
+#link_top:hover span{
+    visibility:visible;
+}
+
+#tooltip{
+    display:block;
+    visibility:hidden;
+    font-size: large;
+    line-height: 25px;
+}

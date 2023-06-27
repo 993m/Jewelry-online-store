@@ -1,0 +1,65 @@
+#hamburger-menu{
+    display:block;
+    padding:0;
+    margin:0;
+}
+
+ul.meniu{
+    width:100%;
+    padding:0;
+    border:none;
+
+    display:none;
+    li{
+        width:100%;
+    }
+
+    >li{
+        li{
+            &:hover{
+                background-color: var(--buton-hover);
+                box-shadow: 0px 0px 10px var(--roz-deschis) inset;
+                transition: box-shadow 1.2s;
+            }
+            a{
+                &:before{
+                    display:none;
+                }
+            }
+        }
+    }
+}
+
+#ch-menu{
+    &:checked{
+        +ul.meniu{
+            padding:0;
+            display: block;
+            transform-origin: top left;
+            animation-name: aparitie_meniu;
+            animation-duration:0.5s;
+            animation-timing-function:linear;
+
+            >li{
+                &:hover{
+                    >li{
+                        display:block;
+                        animation-duration:0.5s;
+                        animation-name: aparitie_submeniu;
+                        animation-timing-function:linear;
+                        transform-origin: top;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes aparitie_meniu{
+    0%{
+        transform:scale(0);
+    } 
+	100%{
+    	transform:scale(1);
+    }
+}

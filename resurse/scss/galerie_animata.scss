@@ -1,0 +1,71 @@
+$nr_imag: <%- locals.nr_imag %> ;
+
+@media screen and (max-width:1000px){
+    #galerie_animata{
+        display:none;
+    }
+}
+
+#galerie_animata{
+    position:relative;
+    width: 400px;
+    height: 300px;
+    padding:1px;
+    margin:auto;
+    border:none;
+    border: 7px solid;
+    border-image: url("./imagini/pozamare.jpg") 10 ;
+    overflow:hidden;
+
+    &:hover{
+        figure{
+            animation-play-state:paused;
+        }
+    }
+    
+    figure{
+        margin:0;
+        padding: 0;
+        display:none;
+        position:absolute;
+        width:400px;
+        height:300px;
+        animation-name: animatie;
+        animation-iteration-count:infinite;
+	    animation-timing-function:linear;
+        animation-duration: $nr_imag * 3s;
+        animation-fill-mode:forwards;
+
+
+        figcaption{
+            position:absolute;
+            background:var(--roz-deschis);
+            width:400px;
+            bottom:0;
+            text-align:center;
+            opacity: 65%;
+        }
+        
+    }
+
+    @for $i from 1 through $nr_imag {
+        figure:nth-child(#{$i}) {
+          display:block;
+          animation-delay: $nr_imag*3 - $i*3 - 3s;
+        }
+    }
+    
+}
+@keyframes animatie {
+    0%  {z-index: $nr_imag; opacity:1;}
+    #{100 % $nr_imag}% {opacity:1; transform:translateX(0px);}
+    #{100 % $nr_imag + 2}% {z-index: $nr_imag; opacity:1; transform:translateX(100px);}
+    #{100 % $nr_imag + 4}% {z-index: $nr_imag; opacity:50%; transform:translateX(-100px);}
+    #{100 % $nr_imag + 6}% {z-index: $nr_imag; opacity:0; transform:translateX(305px);}
+    #{100 % $nr_imag + 8}% {z-index: -$nr_imag; transform:translateX(0px);}
+
+    #{100 - 100 % $nr_imag - 10}% {opacity:0; transform:translateX(0px); z-index: -$nr_imag;}
+    #{100 - 100 % $nr_imag - 9.9}% {z-index: 0;}
+    100% {opacity:1; z-index: 0;}
+    
+}

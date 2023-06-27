@@ -1,0 +1,4 @@
+Creating app... done, ⬢ pure-sands-24916
+https://pure-sands-24916.herokuapp.com/ | https://git.heroku.com/pure-sands-24916.git
+
+Add-on:                postgresql-pointy-26058

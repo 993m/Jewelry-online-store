@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <meta name="keywords" content="bijuterii, diamante, inele, cercei, bratari, coliere, seturi de bijuterii, inel de logodna">
+		<meta name="description" content="Bijuterii încrustate cu diamante frumoase, unice, veritabile! Inele | Brățări | Cercei | Coliere | Seturi de bijuterii">
+        <title>Bijuterii Castanilor - produse</title>
+        <%- include("../fragmente/head") %>
+        <link href="/resurse/css/produse.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src=/resurse/js/produse.js></script>
+    </head>
+    <body>
+    <%- include("../fragmente/header") %>
+
+    <main>
+        <br>
+        <label> Nume: <input type="text" id="inp-nume"></label><br>
+        <!--<label> Maxim calorii: <input type="number" id="inp-calorii" value="10000"></label>-->
+        <div> Carate:<!-- trebuie sa aiba acelasi name ca sa formeze un grup -->
+            <p><label>&lt; 3
+                <input id="i_rad1"  name="gr_rad" value="0:3" type="radio"/>
+            </label></p>
+            <p><label>3-5
+                <input id="i_rad2"  name="gr_rad" value="3:5" type="radio"/>
+            </label></p>
+            <p><label>5-10
+                <input id="i_rad3" name="gr_rad" value="5:10" type="radio"/>
+            </label></p>
+            <p><label>&ge; 10
+                <input id="i_rad3" name="gr_rad" value="10:100" type="radio"/>
+            </label></p>
+            <p><label>Toate
+                <input id="i_rad4" checked name="gr_rad" value="toate" type="radio"/>
+            </label></p>
+        </div><br>
+
+        <label for="culoare">Culoare piatra:</label>
+        <input list="culori" name="culoare" id="culoare" value="Oricare">
+        <datalist id="culori">
+        <option value="Oricare"></option>
+        <option value="alb">
+        <option value="albastru">
+        </datalist><br>
+
+        <section>Pret maxim: <%- locals.pret_minim %> <input type="range" id="inp-pret" value="<%- locals.pret_maxim %>" max="<%- locals.pret_maxim %>" min="<%- locals.pret_minim %>" max="<%- locals.pret_maxim %>" > <%- locals.pret_maxim %> <span id="infoRange"> (<%- locals.pret_maxim %>)</span></section>
+        <br>
+
+        <section>Tip bijuterie:
+            <select id="inp-categorie">
+                <option id="sel-toate" selected value="Toate">Toate</option>
+                <% for (let opt of locals.optiuni) { %>
+                    <option value="<%- opt.unnest %>"><%- opt.unnest %></option>
+                <% } %>
+            </select>
+        </section>
+        <br>
+
+        <section>Tip metal:<br>
+        <select id="metal"  multiple>
+            <option value="aur alb" selected >Aur alb</option>
+            <option value="aur galben" selected >Aur galben</option>
+            <option value="aur roz" selected >Aur roz</option>
+          </select>
+        </section>
+
+        <br>
+        <div>Stilul bijuteriei <br>
+        <label for="s1"><input type="checkbox" name="stil_bijuterie" value="Single Stone" id="s1" checked="true">Single Stone<br></label>
+        <label for="s2"><input type="checkbox" name="stil_bijuterie" value="3 Stones" id="s2" checked="true">3 Stones<br></label>
+        <label for="s3"><input type="checkbox" name="stil_bijuterie" value="Halo Pavé" id="s3" checked="true">Halo Pavé<br></label>
+        <label for="s4"><input type="checkbox" name="stil_bijuterie" value="Stud" id="s4" checked="true">Stud<br></label>
+        <label for="s5"><input type="checkbox" name="stil_bijuterie" value="Drop Dangle" id="s5" checked="true">Drop Dangle<br></label>
+        <label for="s6"><input type="checkbox" name="stil_bijuterie" value="Lever Back" id="s6" checked="true">Lever Back<br></label>
+        </div>
+
+        <p>
+        <button id="filtrare">Filtreaza</button> <button id="resetare">Reseteaza</button> <br/>
+        <button id="sortCrescNume">Sorteaza crescator dupa pret si numerul de stiluri</button>
+        <button id="sortDescrescNume">Sorteaza descrescator dupa pret si numarul de stiluri</button>
+        
+        </p>
+        
+        <button id="suma">Afisati suma produselor din cos</button>  <br/>
+        
+
+        <section id="produse">
+            <h2>Produse</h2>
+            <div class="grid-produse">
+                <% for( let prod of locals.produse) { %>
+                    <article class="produs" >
+                        <h3 class="nume">Nume: <a href="/produs/<%- prod.id %>" ><span class="val-nume"><%- prod.nume %></span></a></h3>
+                        <p class="val-categorie" style="display:none;"><%- prod.categorie %></p>
+                        <p class="val-culoare" style="display:none;"><%- prod.culoare_piatra %></p>
+                        <p class="val-metal" style="display:none;"><%- prod.tip_produs %></p>
+                        <p class="val-stiluri" ><%- prod.stil %></p>
+                        <div class="info-prod">
+                            <table class="tabel" cellspacing="15">
+                                <tr>
+                                  <th>Preț</th>
+                                  <th>Carate</th>
+                                  <th>Metal</th>
+                                </tr>
+                                <tr>
+                                  <td class="val-pret" value="<%- prod.id %>"><%- prod.pret %></td>
+                                  <td class="val-carate"><%- prod.carate %></td>
+                                  <td><%- prod.tip_produs %> <%- prod.tip_metal %>k</td>
+                                </tr>
+                              </table>
+                              <figure>
+                                <a href="/produs/<%- prod.id %>" ><img src="/resurse/imagini/produse/<%- prod.imagine %>" alt="[imagine <%- prod.nume %>]" /></a>
+                            </figure>
+                        </div>
+                        
+                        <label for="select-cos">
+                            Selectează:<br/>
+                            <input type="checkbox" class="select-cos" id="select-cos" value="<%- prod.id %>" autocomplete="off">
+                        </label>
+
+                        <div class="cantitate">
+                        <button class="adauga" value="<%- prod.id %>">+</button>
+                        <p class="cant" id="<%- prod.id %>">1</p>
+                        <button class="scade" value="<%- prod.id %>">-</button>
+                        </div>
+                        
+
+                    </article>
+                <% }%>
+            </div>
+        </section>
+    </main>
+
+    <%- include("../fragmente/footer") %>
+    </body>
+</html>

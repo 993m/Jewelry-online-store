@@ -1,0 +1,60 @@
+
+
+<header>
+
+    <p><button id="btn_tema" class="fas fa-sun"></button></p>
+    <script>    
+        var tema=localStorage.getItem("tema");
+        if(tema) {
+            document.body.classList.add("dark");
+            document.getElementById("btn_tema").className="fas fa-moon"
+        }
+        else {
+            document.body.classList.remove("dark");
+            document.getElementById("btn_tema").className="fas fa-sun"
+        }
+    </script>
+
+    <h1>CASTANILOR</h1>
+    <nav >
+        <label id="hamburger-menu" for="ch-menu">
+            <img src="./resurse/imagini/hamburger_icon.png" alt="meniu">
+        </label>
+        
+        <input id="ch-menu" type="checkbox">
+            <ul class="meniu">
+                    <li><a id="acasa" href="/index"><span class='fas fa-home'></span>Acasă</a>
+                        <ul class="submeniu">
+                            <% if(!locals.utilizator) { %><li><a href="/index#login">Login</a></li> <% } %>
+                            <li><a href="/index#bijuterii-design-special">Bijuterii cu design special</a></li>							
+                        </ul>
+                    </li>
+                    <li><a href="/produse">Produse</a>
+                        <ul class="submeniu">
+                            <% for (let opt of locals.optiuni) { %>
+                                <li><a href="/produse?tip=<%- opt.unnest %>"><%- opt.unnest %></a></li>
+                            <% } %>
+                        </ul>
+                    </li>
+                    <li><a href="/galerie-statica">Galerie</a></li>
+                    <li><a href="/inregistrare">Înregistrare</a></li>
+                    <li><a href="/cos-virtual">Coș</a></li>
+
+                    <% if(locals.utilizator && locals.utilizator.rol=="admin") { %>
+                    <li><a  href="/useri" id="user">Useri</a></li>
+                    <% } %>
+
+                    <% if(locals.utilizator) { %>
+                    <li><a title="<%- locals.utilizator.nume %> <%- locals.utilizator.prenume %>"><%- locals.utilizator.username %></a>
+                        <ul class="submeniu">
+                            <li><a href="/profil">Profil</a></li>
+                            <li><a href="/logout">Logout</a></li>
+                        </ul>
+                    </li>
+                    <% } %>
+
+
+            </ul>
+    </nav>
+    
+</header>

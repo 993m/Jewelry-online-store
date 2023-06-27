@@ -1,0 +1,26 @@
+img{
+    border:none;
+    width:50%;
+}
+
+main{
+    padding:2%;
+    text-align: center;
+}
+
+div{
+    border:none;
+    text-align: center;
+    margin:0;
+    padding:0;
+    width:100%;    
+}
+
+p span, time{
+    color:rgb(102, 97, 97);
+}
+
+#mare{
+    display:flex;
+    align-items: center;
+}

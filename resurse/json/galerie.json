@@ -1,0 +1,91 @@
+{
+	"cale_galerie":"resurse/imagini/galerie",
+	"imagini": [
+		{
+			"cale_imagine":"colier.jpeg",
+			"titlu":"Colier",
+			"descriere":"Colier", 
+			"timp":"00:00-24:00", 
+			"autor":"Skyler Ewing"
+		},
+		{
+			"cale_imagine":"inel5.jpg",
+			"titlu":"Inel",
+			"descriere":"Inel din aur alb", 
+			"timp":"00:00-24:00"
+		},
+		{
+			"cale_imagine":"cercei-si-lantisor.jpg",
+			"titlu":"Cercei și lănțișor",
+			"descriere":"Cercei și lantisor", 
+			"timp":"00:00-24:00"
+		},
+		{
+			"cale_imagine":"inel1.jpg",
+			"titlu":"Inel",
+			"descriere":"Inel", 
+			"timp":"00:00-24:00"
+		},
+		{
+			"cale_imagine":"inel2.jpg",
+			"titlu":"Inel",
+			"descriere":"Inelut", 
+			"timp":"00:00-24:00"
+		},
+		{
+			"cale_imagine":"inel3.jpg",
+			"titlu":"Inel",
+			"descriere":"Inel aur roz", 
+			"timp":"00:00-24:00"
+		},
+		{
+			"cale_imagine":"inel4.jpg",
+			"titlu":"Inel",
+			"descriere":"Alt inelut", 
+			"timp":"00:00-24:00"
+		},
+		{
+			"cale_imagine":"bratara1.jpg",
+			"titlu":"Bratarica",
+			"descriere":"Bratara", 
+			"timp":"00:00-24:00"
+		},
+		{
+			"cale_imagine":"inel6.jpg",
+			"titlu":"Inel",
+			"descriere":"Alt inel", 
+			"timp":"00:00-24:00"
+		},
+		{
+			"cale_imagine":"cercei.jpg",
+			"titlu":"Cercei",
+			"descriere":"Cercei", 
+			"timp":"00:00-24:00"
+		},
+		{
+			"cale_imagine":"inel7.jpg",
+			"titlu":"INEL",
+			"descriere":"Inel", 
+			"timp":"12:00-24:00"
+		},
+		{
+			"cale_imagine":"bratara2.jpg",
+			"titlu":"Bratara",
+			"descriere":"Alta bratara", 
+			"timp":"00:00-12:00"
+		},
+		{
+			"cale_imagine":"cercei1.jpg",
+			"titlu":"Cerrcei",
+			"descriere":"Cerrcei", 
+			"timp":"12:00-24:00"
+		},
+		{
+			"cale_imagine":"cercei2.jpg",
+			"titlu":"Cerrrcei",
+			"descriere":"Cerrrcei", 
+			"timp":"00:00-12:00"
+		}
+		
+	]
+}

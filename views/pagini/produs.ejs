@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <meta name="keywords" content="bijuterii, diamante, inele, cercei, bratari, coliere, seturi de bijuterii, inel de logodna">
+		<meta name="description" content="Bijuterii încrustate cu diamante frumoase, unice, veritabile! Inele | Brățări | Cercei | Coliere | Seturi de bijuterii">
+        <title>Bijuterii Castanilor - produs</title>
+        <%- include("../fragmente/head") %>    
+        <link href="/resurse/css/produs.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+    <%- include("../fragmente/header") %>
+
+    <main>
+        <section>
+            <h2>Pagină produs</h2>
+                <article id="art-produs">
+                    <h3><span class="nume"><%- locals.prod.nume %></span></h3>
+                    <div id="mare">
+                    <div>
+                    <p>Pret: <span class="pret"><%- locals.prod.pret %> </span></p>
+                    <p>Descriere: <span class="descriere"><%- locals.prod.descriere %> </span></p>
+                    <p>Carate: <span class="ingrediente"><%- locals.prod.carate %> </span></p>
+                    <p>Tipul metalului: <span class="metal"><%- locals.prod.tip_produs %> <%- locals.prod.tip_metal %>k</span></p>
+                    <p>Culoare diamant: <span class="culoare"><%- locals.prod.culoare_piatra %> </span></p>
+                    <p>Stil bijuterie: <span class="stil"><%- locals.prod.stil %> </span></p>
+                    <p>Se poate personaliza: <span class="personalizare"><% if(locals.prod.posibilitate_personalizare) {%> da <% }else {%> nu <% } %></time></p>
+                    <p>Data adaugare: <time class="data"><% data=locals.prod.data_adaugare; zile=["Luni", "Marti", "Miercuri", "Joi", "Vineri", "Sambata", "Duminica"]; %>
+                         <%- data.getDay() %>(<%- zile[data.getDay()] %>)/<%- data.getMonth() %>/<%- data.getFullYear() %> </span></p>
+
+                    </div>
+                    <figure class="imag-produs">
+                        <img  src="/resurse/imagini/produse/<%- locals.prod.imagine %>" alt="[imagine <%- locals.prod.nume %>]" />
+                    </figure>   
+                </div> 
+                </article>
+            
+        </section>
+    </main>
+
+    <%- include("../fragmente/footer") %>
+    </body>
+</html>

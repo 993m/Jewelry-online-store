@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head>
+		<title>Bijuterii cu diamante :)</title>
+		<meta name="keywords" content="bijuterii, diamante, inele, cercei, bratari, coliere, seturi de bijuterii, inel de logodna">
+		<meta name="description" content="Bijuterii încrustate cu diamante frumoase, unice, veritabile! Inele | Brățări | Cercei | Coliere | Seturi de bijuterii">
+		<link rel="stylesheet" type="text/css" href="/resurse/galerie_animata.css" />
+        <%- include("../fragmente/head.ejs"); %>
+
+	</head>
+
+	<body>
+		<%- include("../fragmente/header.ejs"); %>
+
+
+		<main id="main-index">
+
+			<div id="prezentare">
+				<picture>
+					<source srcset="./resurse/imagini/pozamare3.jpg" media="(max-width:800px)"/>
+					<source srcset="./resurse/imagini/pozamare2.jpg" media="(max-width:1000px)"/>
+					<img src="./resurse/imagini/pozamare.jpg" alt="poza mare" class="center" />
+				</picture>
+			</div>
+
+
+			<div id="tabel">
+				<h2>Tabel</h2>
+			</div>
+
+			<div id="calendar">
+				<h2>Calendarul evenimentelor</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+
+			<div id="anunturi">
+				<h2>Anunțuri</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+			</div>
+
+			<div id="utilizatori">
+				<h2>Useri online</h2>
+				<ul>
+					<% for(let u of locals.useriOnline) { %>
+						<li> <%- u.username %> <a href = "mailto: <%- u.email %>" target="_blank">(<%- u.email %>)</a></li>
+					<% } %>
+				</ul>
+			</div>
+
+			<div id="dateus">
+				<h2>Date despre utilizatori și statistici</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+
+			<div id="datess">
+				<h2>Date despre site și server</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+
+			<div id="creativa">
+
+				
+					<% if(!locals.utilizator) { %>
+						<section id="login">
+							<h2>Login</h2>
+						<form id="form_inreg"  method="post" class="date"  action="/login"  enctype="multipart/form-data">
+							<p>
+								<label>
+									Username: <input type="text" name="username" id="inp-username" value="prof<%= Math.floor(Math.random()*100000) %>" required pattern="[A-Za-z0-9]+">
+								</label>
+							</p>
+							<p>
+								<label>
+									Parola: <input id="parl" type="password" required  name="parola" value="">
+								</label>
+							</p>
+							<p><input type="submit" value="Logare"></p>
+		
+						</form>
+						<% }%>
+		
+						<%- locals.mesajLogin %>	
+					</section>
+
+
+					<br>
+				<%- include("../fragmente/galerie_statica.ejs"); %>
+
+				<br>
+
+				<%- include("../fragmente/galerie_animata.ejs"); %>
+
+				<br/> <br/> <br/>
+
+
+				<section id = "s1">
+					<h2>Eleganță, delicatețe, rafinament! <i class="fa-solid fa-gem"></i> </h2>
+					<p>Descoperă aici <b>bijuterii veritabile</b>, cu <b>diamante naturale</b>, care să potențeze și să păstreze pentru eternitate emoția unui moment unic!</p>
+					<p>Poți găsi <b>inele, brățări, coliere, cercei și seturi de bijuterii</b>, cu design clasic sau sofisticat, care să reliefeze și mai mult frumusețea personalității tale!</p>
+					<br/> 
+					<p><q cite="https://ragnojewelry.wordpress.com/2020/07/29/15-citate-inspirationale-despre-bijuterii/">Femeile fara bijuterii sunt frumoase ca cerul fara stele.</q> - Valeria Mahok. Nu suntem de acord cu dumneaei. Va recomandam, totusi, sa purtati bijuterii.</p>
+					
+					<br>
+					<a href="./resurse/imagini/jail.jpg" download target="_blank">Descarcati, daca vreți, o poza frumoasa! Cu diamante!</a>
+					
+				</section>
+
+				<br/> <br/> <br/> <br/> <br/>
+
+				<section id = "s2">
+					<h2>Emoție, puritate, sublim =))))))))</h2>
+					<figure>
+						<picture>							
+							<source srcset="./resurse/imagini/copilasii_mica.jpg" media="(max-width:800px)"/>
+							<source srcset="./resurse/imagini/copilasii_medie.jpg" media="(max-width:1000px)"/>
+							<img src="./resurse/imagini/copilasii.jpg" alt="poza frumoasa cu niste copii" >
+						</picture>
+					
+					<figcapiton>Scumpii, dragii &lt;3 </figcapiton>
+					</figure>
+	
+					<p>Strălucitoare, superbe și veșnic "la modă", diamantele sunt întotdeauna apreciate și iubite, devenind un cadou cu care nu ați putea să dați greș.
+					Mai mult decât atât, plăcerea de a le privi și de a le purta nu este una temporară, ci una care se menține pe parcusul întregii vieți și poate fi trimisă chiar mai departe, din generație în generație.
+					Dacă, însă, nu sunteți convinși că diamantele sunt un cadou nemaipomenit, puteți găsi mai jos o listă cu 5 argumente puternice în aceasta privintă.</p>
+	
+					<a href="https://www.diamante.ro/blog/sfatul-specialistului/cinci-motive-sa-faci-cadou-bijuterii-cu-diamante/lz4j8" target="_blank">Cinci motive pentru care să faci cadou bijuterii cu diamante</a>
+	
+				</section>
+
+				<br/> <br/> <br/> <br/> <br/>
+
+				<section id="inel-de-logodna">
+					<h2>Găsește inelul de logodnă perfect!  <i class="fa-solid fa-heart fa-beat"></i> </h2>
+					<p>Daca aveți nevoie de ajutor în alegerea inelului de logodnă potrivit, următoarele informații sunt exact ceea ce căutați!</p>
+					<div id="cont_ifr">
+						<iframe src="https://www.youtube.com/embed/5fC1Sq-Jptk" name="ifr"></iframe>
+						<div id="cont_linkuri">
+							<a href="https://www.youtube.com/embed/5fC1Sq-Jptk" target="ifr">10 lucruri pe care trebuie să le știi înainte de a cumpăra un inel de logodnă.</a>
+							<a href="https://www.youtube.com/embed/DItRhoe02tM" target="ifr">Cum să cumperi un inel de logodnă. Greșeli în achiziționarea de diamante.</a>
+						</div>
+					</div>
+				</section>
+	
+	
+				<br/> <br/> <br/> <br/> <br/>
+	
+				<section id="bijuterii-design-special">
+					<h2>Bijuterii cu design special</h2>
+
+					<video controls poster="/resurse/imagini/produse/setSnmistru.jpg" preload="auto">
+						<source src="/resurse/video/video.mp4" type="video/mp4">
+						<source src="/resurse/video/video.ogv" type="video/ogv">
+						<track default src="/resurse/video/tracks/mesaj_ro.vtt" kind="captions" srclang="ro" label="romana">
+						<track src="/resurse/video/tracks/mesaj_en.vtt" kind="captions" srclang="en" label="engleza">
+					</video>
+
+				</section>
+	
+				<br/> <br/> <br/> <br/> <br/>
+	
+				<section id = "intrebari-frecvente">
+					<h2>Întrebări frecvente</h2>
+					<details>
+						<summary>Se poate returna/înlocui/modifica o bijuterie?</summary>
+						<p>Un produs poate fi returnat sau înlocuit în termen de maxim 14 zile de la cumpărare, dacă acesta se află într-o stare la fel de bună ca atunci când a fost cumpărat.
+						De asemenea, dacă doriți să modificați o bijuterie, nu ezitați să ne contactați!
+						După examinarea cererilor dumneavoastră, vă vom anunța dacă acestea sunt posibile. În caz afirmativ, ne vom ocupa de realizarea modificărilor contra unui cost suplimentar care va depinde de complexitatea lor.</p>
+					</details>	
+	
+					<details>
+						<summary>Se poate realiza plata în rate?</summary>
+						<p>Da, plata produselor se poate efectua în <s>până la 5</s> <ins>până la 7</ins> rate lunare.</p>
+					</details>
+	
+					<details>
+						<summary>Se poate personaliza o bijuterie?</summary>
+						<p>Da, o bijuterie poate fi personalizată prin gravarea unui text la alegere, însă pentru aceasta este nevoie să ne contactați imediat după ce comanda a fost plasată, pentru a discuta detalii legate de inscripționare.</p>
+					</details>
+				</section>
+			</div>
+		</main>
+
+		<%- include("../fragmente/footer.ejs"); %>
+
+	</body>
+
+</html>
+
+
+
+
+
+
+
